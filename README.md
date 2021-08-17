@@ -1,2 +1,7 @@
-# phoenixtree-vue
-基础布局
+# phoenixtree-vue-plugin
+
+# 使用方式
+在main.js进行全局引入
+import phoenixtreeVuePlugin from "phoenixtree-vue-plugin"
+import "phoenixtree-vue-plugin/lib/phoenixtreeVue.css"
+Vue.use(phoenixtreeVuePlugin)
