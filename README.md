@@ -11,5 +11,10 @@ Vue.use(phoenixtreeVuePlugin);
 
 # 内容
 基础布局组件：phoenixtree-layout;
+参数：
+  -noPadding：对外层padding控制
+    -type：Boolean
+  -noContentPadding：对内层padding控制
+    -type：Boolean
 
 基础混合表格组件：phoenixtree-base-table;

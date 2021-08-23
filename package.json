@@ -1,6 +1,6 @@
 {
   "name": "phoenixtree-vue-plugin",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "private": false,
   "main": "lib/phoenixtreeVue.umd.min.js",
   "scripts": {

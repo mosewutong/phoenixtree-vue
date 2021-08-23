@@ -1,6 +1,6 @@
 <template>
-    <div class="Frame">
-        <div class="Frame_content">
+    <div :class="noPadding ? 'Frame nopadding' : 'Frame'">
+        <div :class="noContentPadding ? 'Frame_content nocontentpadding' : 'Frame_content'">
             <slot name="Frame-content"></slot>
         </div>
     </div>
@@ -8,7 +8,20 @@
 
 <script>
 export default {
-    name: 'phoenixtree-layout'
+    name: 'phoenixtree-layout',
+    props: {
+        'noPadding': {
+            type: Boolean,
+            default: false,
+        },
+        'noContentPadding': {
+            type: Boolean,
+            default: false,
+        },
+    },
+    mounted(){
+        console.log(this.noPadding)
+    }
 }
 </script>
 
@@ -26,6 +39,15 @@ export default {
         box-sizing: border-box;
         padding: 8px;
         border-radius: 8px;
+    }
+    .nocontentpadding{
+        padding: 0px;
+    }
+}
+.nopadding{
+    padding: 0;
+    .Frame_content{
+        border-radius: 0px;
     }
 }
 </style>

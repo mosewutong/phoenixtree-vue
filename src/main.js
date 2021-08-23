@@ -4,6 +4,9 @@ import router from './router'
 
 Vue.config.productionTip = false
 
+import pluginObj from "./index"
+Vue.use(pluginObj)
+
 new Vue({
   router,
   render: h => h(App)
