@@ -46,35 +46,41 @@ export default {
         }
     },
     mounted() {
-        // 动态计算高度
-        let formDom = document.getElementsByClassName('base_table_top_btn')[0];
-        let formDomChildren = document.getElementsByClassName('base_table_top_btn_box')[0].children;
-        let midDom = document.getElementsByClassName('base_table_mid_btn')[0];
-        let tableDom = document.getElementsByClassName('base_table_content')[0];
-        let subNumber = 0;
-        // 表单区域计算
-        if (formDomChildren[0].children.length === 0 && formDomChildren[1].children.length === 0) {
-            formDom.setAttribute('style', `display: none; height: 0px;`);
-            this.formDomFlag = false;
-        } else if ((formDomChildren[0].scrollHeight > 0 || formDomChildren[1].scrollHeight > 0) && formDomChildren[0].scrollHeight <= 50) {
-            formDom.setAttribute('style', `display: flex;`);
-            subNumber += 50;
-            this.formDomFlag = false;
-        } else if (formDomChildren[0].scrollHeight > 50) {
-            formDom.setAttribute('style', `display: flex;`);
-            subNumber += 50;
-            this.formDomFlag = true;
-        }
-        // 按钮区域计算
-        if (midDom.children.length === 0) {
-            midDom.setAttribute('style', `display: none; height: 0px;`);
-        } else {
-            midDom.setAttribute('style', `display: block; height: 50px;`);
-            subNumber += 50;
-        }
-        tableDom.setAttribute('style', `height: calc(100% - ${50 + subNumber}px )`)
+        this.computedHeight();
+        window.addEventListener('resize', () => {
+            this.computedHeight();
+        });
     },
     methods: {
+        computedHeight() {
+            // 动态计算高度
+            let formDom = document.getElementsByClassName('base_table_top_btn')[0];
+            let formDomChildren = document.getElementsByClassName('base_table_top_btn_box')[0].children;
+            let midDom = document.getElementsByClassName('base_table_mid_btn')[0];
+            let tableDom = document.getElementsByClassName('base_table_content')[0];
+            let subNumber = 0;
+            // 表单区域计算
+            if (formDomChildren[0].children.length === 0 && formDomChildren[1].children.length === 0) {
+                formDom.setAttribute('style', `display: none; height: 0px;`);
+                this.formDomFlag = false;
+            } else if ((formDomChildren[0].scrollHeight > 0 || formDomChildren[1].scrollHeight > 0) && formDomChildren[0].scrollHeight <= (50+16)) {
+                formDom.setAttribute('style', `display: flex;`);
+                subNumber += 50;
+                this.formDomFlag = false;
+            } else if (formDomChildren[0].scrollHeight > (50+16)) {
+                formDom.setAttribute('style', `display: flex;`);
+                subNumber += 50;
+                this.formDomFlag = true;
+            }
+            // 按钮区域计算
+            if (midDom.children.length === 0) {
+                midDom.setAttribute('style', `display: none; height: 0px;`);
+            } else {
+                midDom.setAttribute('style', `display: block; height: 50px;`);
+                subNumber += 50;
+            }
+            tableDom.setAttribute('style', `height: calc(100% - ${50 + subNumber}px )`)
+        },
         // 表单区域展开函数
         formOpen() {
             let formDom = document.getElementsByClassName('base_table_top_btn_box')[0];
@@ -140,15 +146,32 @@ export default {
                 top: 0;
                 background: #fff;
                 box-sizing: border-box;
-                // border: 1px solid #eaeaea;
-                // box-shadow: 5px 5px 5px rgb(223, 223, 223);
+                border: 1px solid #fff;
+                box-shadow: 0px 0px 0px rgb(223, 223, 223);
                 display: flex;
                 .base_table_top_btn_form{
                     width: calc(100% - 200px);
                     line-height: 50px;
-                    display: inline-block;
                     box-sizing: border-box;
-                    padding: 0 10px;
+                    padding: 8px;
+                    display: inline-flex;
+                    justify-content: flex-start;
+                    .el-form{
+                        text-align: left;
+                        /deep/.el-form-item{
+                            height: 40px;
+                            line-height: 40px;
+                            .el-form-item__label,.el-form-item__content{
+                                height: 100%;
+                                .el-input{
+                                    height: 100%;
+                                    input{
+                                        height: 100%;
+                                    }
+                                }
+                            }
+                        }
+                    }
                 }
                 .base_table_top_btn_btn{
                     width: 200px;
