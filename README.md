@@ -37,3 +37,36 @@ Vue.use(phoenixtreeVuePlugin);
     name: slot-table
     底部按钮区
     name: slot-page
+    
+##### 基础头部信息栏组件：phoenixtree-header;
+###### slot: 
+    左侧系统信息区域(可写入一个25*25的icon)
+    name: slot-header-title
+
+    右侧用户信息区域
+    1. 用户帐号首字符
+    name: slot-header-btn-pic
+    2. 用户帐号
+    name: slot-header-btn-name
+
+###### Attribute: 
+    悬浮下拉数组
+    dropdowmArr
+
+    name: 展示名称
+    command: 点击操作区别标识
+
+    示例：
+    [
+        {
+            name: '退出登录',
+            command: 'logOut'
+        }
+    ]
+
+###### Methods:
+    悬浮下拉点击触发函数
+    emitChange(str)
+
+    str: 值为command区别标识
+

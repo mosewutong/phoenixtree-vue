@@ -1,11 +1,13 @@
 // 导入单个组件
 import pluginLayout from "./plugin/plugin-layout/index";
 import pluginBaseTable from "./plugin/plugin-base-table/index";
+import pluginHeader from "./plugin/plugin-header/index"; // 1.0.19
 
 // 以数组的结构保存组件，便于遍历
 const components = [
     pluginLayout,
-    pluginBaseTable
+    pluginBaseTable,
+    pluginHeader
 ]
 
 // 定义 install 方法
