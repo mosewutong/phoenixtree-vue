@@ -2,7 +2,7 @@
   <div class="plugin_header" :style="`background: ${ bcColor };`">
     <div class="plugin_header_left" :style="`color: ${ sysColor };`">
       <slot name="slot-header-title">
-        <img src="../../assets/mo.png" alt="">
+        <!-- <img src="../../assets/mo.png" alt=""> -->
         后台管理系统
       </slot>
     </div>
@@ -47,7 +47,7 @@ export default {
     },
     'bcColor': {
       type: String,
-      default: '#ffffff'
+      default: '#3d7ffc'
     },
     'sysColor': {
       type: String,

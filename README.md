@@ -96,7 +96,7 @@ Vue.use(phoenixtreeVuePlugin);
 
     组件背景色
     2. bcColor
-    默认：#ffffff 
+    默认：#3d7ffc 
 
     系统标题颜色
     3. sysColor 
