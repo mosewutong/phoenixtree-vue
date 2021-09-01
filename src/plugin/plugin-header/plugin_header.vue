@@ -1,6 +1,6 @@
 <template>
-  <div class="plugin_header">
-    <div class="plugin_header_left">
+  <div class="plugin_header" :style="`background: ${ bcColor };`">
+    <div class="plugin_header_left" :style="`color: ${ sysColor };`">
       <slot name="slot-header-title">
         <img src="../../assets/mo.png" alt="">
         后台管理系统
@@ -11,10 +11,10 @@
       <div class="leftListUser">
         <el-dropdown @command="commandChange">
           <div class="leftListUserPic el-dropdown-link">
-            <span class="userPic">
+            <span class="userPic" :style="`background: ${ picBcColor }; color: ${ picColor };`">
               <slot name="slot-header-btn-pic">A</slot>
             </span>
-            <div class="leftListUserTxt">
+            <div class="leftListUserTxt" :style="`color: ${ nameColor };`">
               <slot name="slot-header-btn-name">administrator</slot>
             </div>
           </div>
@@ -43,6 +43,26 @@ export default {
           }
         ]
       }
+    },
+    'bcColor': {
+      type: String,
+      default: '#ffffff'
+    },
+    'sysColor': {
+      type: String,
+      default: '#ffffff'
+    },
+    'picBcColor': {
+      type: String,
+      default: '#ffffff'
+    },
+    'picColor': {
+      type: String,
+      default: '#3d7ffc'
+    },
+    'nameColor': {
+      type: String,
+      default: '#ffffff'
     }
   },
   methods:{

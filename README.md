@@ -50,18 +50,38 @@ Vue.use(phoenixtreeVuePlugin);
 
 ###### Attribute: 
     悬浮下拉数组
-    dropdowmArr
+    1. dropdowmArr
 
     name: 展示名称
     command: 点击操作区别标识
 
-    示例：
+    默认：
     [
         {
             name: '退出登录',
             command: 'logOut'
         }
     ]
+
+    组件背景色
+    2. bcColor
+    默认：#ffffff 
+
+    系统标题颜色
+    3. sysColor 
+    默认：#ffffff 
+
+    用户帐号首字母背景色
+    4. picBcColor
+    默认：#ffffff 
+
+    用户帐号首字母颜色
+    5. picColor 
+    默认：#3d7ffc 
+
+    用户帐号颜色
+    6. nameColor
+    默认：#ffffff 
 
 ###### Methods:
     悬浮下拉点击触发函数

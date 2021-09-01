@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <phoenixtree-header :dropdowmArr="dropdowmArr" @emitChange="commandChange">
+    <phoenixtree-header :dropdowmArr="dropdowmArr" :bcColor="'linear-gradient(194deg, #3d7ffc 0%, #0450ff 100%);'" @emitChange="commandChange">
       <template v-slot:header-title>
         <img src="../assets/mo.png" alt="">
         cesh
