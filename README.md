@@ -20,7 +20,7 @@ Vue.use(phoenixtreeVuePlugin);
     2. noContentPadding：对内层padding控制  
         2.1 type：Boolean 
 
-##### 基础混合表格组件：phoenixtree-base-table;(v1.0.x)
+##### 基础混合表格组件：phoenixtree-base-table;(v1.1.x)
 ###### slot: 
     标题
     name: slot-title
@@ -36,6 +36,37 @@ Vue.use(phoenixtreeVuePlugin);
     name: slot-table
     底部按钮区
     name: slot-page
+
+###### Attribute: 
+    分页总条数
+    1. pageTotal 
+    type: Number 
+    default: 100 
+
+    分页单页显示数量
+    2. pageSize
+    type: Number 
+    default: 30 
+
+    分页当页页码
+    3. currentPage
+    type: Number 
+    default: 1 
+
+    分页选中项背景色
+    4. pageBcColor 
+    type: String 
+    default: '#409eff' 
+
+    分页选中项文字颜色 
+    5. pageTxtColor 
+    type: String 
+    default: '#ffffff' 
+
+###### Methods: 
+    当前页码改变触发函数
+    1. currentChange(num)
+    num: 当前页码值
     
 ##### 基础头部信息栏组件：phoenixtree-header;(v1.1.x)
 ###### slot: 
@@ -85,7 +116,6 @@ Vue.use(phoenixtreeVuePlugin);
 
 ###### Methods:
     悬浮下拉点击触发函数
-    emitChange(str)
-
+    1. emitChange(str)
     str: 值为command区别标识
 

@@ -27,11 +27,28 @@
             </div>
 
             <div class="base_table_content">
-                <slot name="slot-table"></slot>
+                <slot name="slot-table">
+                    <el-table
+                        :data="[]"
+                        height="100%"
+                        style="width: 100%"
+                        border
+                    >
+                    </el-table>
+                </slot>
             </div>
 
-            <div class="base_table_footer">
-                <slot name="slot-page"></slot>
+            <div class="base_table_footer" :style="`--pageBcColor:${ pageBcColor }; --pageTxtColor:${pageTxtColor}`">
+                <!-- <slot name="slot-page"></slot> -->
+                <el-pagination
+                    background
+                    layout="total, prev, pager, next, jumper"
+                    :total="pageTotal"
+                    :page-size="pageSize"
+                    :current-page="currentPage"
+                    @current-change="currentChange"
+                >
+                </el-pagination>
             </div>
         </div>
     </div>
@@ -40,6 +57,28 @@
 <script>
 export default {
     name: 'phoenixtree-base-table',
+    props: {
+        'pageTotal': {
+            type: Number,
+            default: 100
+        },
+        'pageSize': {
+            type: Number,
+            default: 30
+        },
+        'currentPage': {
+            type: Number,
+            default: 1
+        },
+        'pageBcColor': {
+            type: String,
+            default: '#409eff'
+        },
+        'pageTxtColor': {
+            type: String,
+            default: '#ffffff'
+        }
+    },
     data() {
         return {
             formDomFlag: false, // 表单区域，显示下拉标识
@@ -52,6 +91,7 @@ export default {
         });
     },
     methods: {
+        // 动态计算高度
         computedHeight() {
             // 动态计算高度
             let formDom = document.getElementsByClassName('base_table_top_btn')[0];
@@ -98,6 +138,10 @@ export default {
                 iconDom.setAttribute('style', 'transform: rotate(0deg);')
             }
         },
+        // 页码改变
+        currentChange(num){
+            this.$emit('currentChange', num)
+        }
     },
 }
 </script>
@@ -206,5 +250,9 @@ export default {
 }
 /deep/.el-form-item{
     margin-bottom: 0 !important;
+}
+/deep/.active {
+    background: var(--pageBcColor) !important;
+    color: var(--pageTxtColor) !important;
 }
 </style>

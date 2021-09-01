@@ -12,7 +12,7 @@
     <div class="homeContent">
       <phoenixtree-layout :noPadding='false' :noContentPadding="false">
         <template v-slot:Frame-content>
-          <phoenixtree-base-table>
+          <phoenixtree-base-table :pageTotal="200" :pageSize="20" :currentPage="4" @currentChange="currentChange">
             <template v-slot:slot-form>
               <el-form :inline="true" :model="formInline">
                 <el-form-item label="审批人">
@@ -76,6 +76,9 @@ export default {
   methods:{
     commandChange(obj){
       console.log('1==',obj);
+    },
+    currentChange(num){
+      console.log('页码',num)
     }
   }
 }
