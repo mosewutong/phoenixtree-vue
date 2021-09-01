@@ -9,7 +9,7 @@ Vue.use(phoenixtreeVuePlugin);
 ```
 
 #### 内容
-##### 基础布局组件：phoenixtree-layout; 
+##### 基础布局组件：phoenixtree-layout;(v1.0.x) 
 ###### slot: 
     name: Frame-content
 
@@ -20,7 +20,7 @@ Vue.use(phoenixtreeVuePlugin);
     2. noContentPadding：对内层padding控制  
         2.1 type：Boolean 
 
-##### 基础混合表格组件：phoenixtree-base-table;
+##### 基础混合表格组件：phoenixtree-base-table;(v1.0.x)
 ###### slot: 
     标题
     name: slot-title
@@ -37,7 +37,7 @@ Vue.use(phoenixtreeVuePlugin);
     底部按钮区
     name: slot-page
     
-##### 基础头部信息栏组件：phoenixtree-header;
+##### 基础头部信息栏组件：phoenixtree-header;(v1.1.x)
 ###### slot: 
     左侧系统信息区域(可写入一个25*25的icon)
     name: slot-header-title
