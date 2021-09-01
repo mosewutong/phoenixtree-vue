@@ -16,6 +16,7 @@
             </span>
             <div class="leftListUserTxt" :style="`color: ${ nameColor };`">
               <slot name="slot-header-btn-name">administrator</slot>
+              <i class="el-icon-s-operation"></i>
             </div>
           </div>
           <template #dropdown>
@@ -126,6 +127,10 @@ export default {
         }
         .leftListUserTxt{
           text-align: center;
+          i{
+            margin-left: 10px;
+            font-size: 14px;
+          }
         }
       }
     }

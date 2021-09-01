@@ -38,8 +38,7 @@
                 </slot>
             </div>
 
-            <div class="base_table_footer" :style="`--pageBcColor:${ pageBcColor }; --pageTxtColor:${pageTxtColor}`">
-                <!-- <slot name="slot-page"></slot> -->
+            <div class="base_table_footer" :style="`--pageBcColor:${ pageBcColor }; --pageTxtColor:${ pageTxtColor }`">
                 <el-pagination
                     background
                     layout="total, prev, pager, next, jumper"
