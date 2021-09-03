@@ -9,16 +9,23 @@ Vue.use(phoenixtreeVuePlugin);
 ```
 
 #### 内容
-##### 基础布局组件：phoenixtree-layout;(v1.0.x) 
+##### 基础布局组件：phoenixtree-layout;(v1.1.x) 
 ###### slot: 
     name: Frame-content
 
 ###### Attribute: 
     1. noPadding：对外层padding控制  
-        1.1 type：Boolean  
+       type：Boolean
+       default: false  
         
     2. noContentPadding：对内层padding控制  
-        2.1 type：Boolean 
+       type：Boolean 
+       default: false 
+    
+    3. minWidth: 布局组件最小宽度控制 
+       type: String 
+       default: '900px'
+
 
 ##### 基础混合表格组件：phoenixtree-base-table;(v1.1.x)
 ###### slot: 
@@ -38,34 +45,28 @@ Vue.use(phoenixtreeVuePlugin);
     name: slot-page
 
 ###### Attribute: 
-    分页总条数
-    1. pageTotal 
-    type: Number 
-    default: 100 
+    1. pageTotal: 分页总条数 
+       type: Number 
+       default: 100 
 
-    分页单页显示数量
-    2. pageSize
-    type: Number 
-    default: 30 
+    2. pageSize: 分页单页显示数量
+       type: Number 
+       default: 30 
 
-    分页当页页码
-    3. currentPage
-    type: Number 
-    default: 1 
+    3. currentPage: 分页当页页码
+       type: Number 
+       default: 1 
 
-    分页选中项背景色
-    4. pageBcColor 
-    type: String 
-    default: '#409eff' 
+    4. pageBcColor: 分页选中项背景色
+       type: String 
+       default: '#409eff' 
 
-    分页选中项文字颜色 
-    5. pageTxtColor 
-    type: String 
-    default: '#ffffff' 
+    5. pageTxtColor: 分页选中项文字颜色 
+       type: String 
+       default: '#ffffff' 
 
 ###### Methods: 
-    当前页码改变触发函数
-    1. currentChange(num)
+    1. currentChange(num): 当前页码改变触发函数
     num: 当前页码值
     
 ##### 基础头部信息栏组件：phoenixtree-header;(v1.1.x)
@@ -80,39 +81,37 @@ Vue.use(phoenixtreeVuePlugin);
     name: slot-header-btn-name
 
 ###### Attribute: 
-    悬浮下拉数组
-    1. dropdowmArr
+    1. dropdowmArr: 悬浮下拉数组
+       name: 展示名称
+       command: 点击操作区别标识
+       type: Array 
+       default:
+        [
+            {
+                name: '退出登录',
+                command: 'logOut'
+            }
+        ]
 
-    name: 展示名称
-    command: 点击操作区别标识
+    2. bcColor: 组件背景色
+       type: String 
+       default: '#3d7ffc' 
 
-    默认：
-    [
-        {
-            name: '退出登录',
-            command: 'logOut'
-        }
-    ]
+    3. sysColor: 系统标题颜色 
+       type: String 
+       default: '#ffffff' 
 
-    组件背景色
-    2. bcColor
-    默认：#3d7ffc 
+    4. picBcColor: 用户帐号首字母背景色
+       type: String 
+       default: '#ffffff' 
 
-    系统标题颜色
-    3. sysColor 
-    默认：#ffffff 
+    5. picColor: 用户帐号首字母颜色
+       type: String 
+       default: '#3d7ffc' 
 
-    用户帐号首字母背景色
-    4. picBcColor
-    默认：#ffffff 
-
-    用户帐号首字母颜色
-    5. picColor 
-    默认：#3d7ffc 
-
-    用户帐号颜色
-    6. nameColor
-    默认：#ffffff 
+    6. nameColor: 用户帐号颜色
+       type: String 
+       default: '#ffffff' 
 
 ###### Methods:
     悬浮下拉点击触发函数
