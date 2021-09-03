@@ -10,7 +10,7 @@
       <!-- <template v-slot:header-btn-name>{{userName}}</template> -->
     </phoenixtree-header>
     <div class="homeContent">
-      <phoenixtree-layout :noPadding='false' :noContentPadding="false">
+      <phoenixtree-layout :noPadding='false' :noContentPadding="false" :minWidth="'1000px'">
         <template v-slot:Frame-content>
           <phoenixtree-base-table :pageTotal="200" :pageSize="20" :currentPage="4" @currentChange="currentChange">
             <template v-slot:slot-form>

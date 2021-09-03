@@ -1,5 +1,5 @@
 <template>
-    <div :class="noPadding ? 'Frame nopadding' : 'Frame'">
+    <div :class="noPadding ? 'Frame nopadding' : 'Frame'" :style="`minWidth: ${minWidth}`">
         <div :class="noContentPadding ? 'Frame_content nocontentpadding' : 'Frame_content'">
             <slot name="Frame-content"></slot>
         </div>
@@ -18,6 +18,10 @@ export default {
             type: Boolean,
             default: false,
         },
+        'minWidth': {
+            type: String,
+            default: '900px',
+        }
     },
     mounted(){
         console.log(this.noPadding)
