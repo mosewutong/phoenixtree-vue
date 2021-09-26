@@ -229,6 +229,8 @@ export default {
             width: 100%;
             height: 50px;
             line-height: 50px;
+            box-sizing: border-box;
+            padding: 0 8px;
         }
     
         .base_table_content{
