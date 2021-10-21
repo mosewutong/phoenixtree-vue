@@ -39,6 +39,15 @@
                 </el-form-item>
               </el-form>
             </template>
+
+            <template v-slot:slot-form-btn>
+              <el-button>查询</el-button>
+            </template>
+
+            <template v-slot:slot-mid-btn>
+              <el-button type="primary">查询1</el-button>
+              <el-button>查询2</el-button>
+            </template>
           </phoenixtree-base-table>
         </template>
       </phoenixtree-layout>

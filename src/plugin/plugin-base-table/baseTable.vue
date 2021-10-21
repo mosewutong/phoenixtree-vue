@@ -115,7 +115,7 @@ export default {
             if (midDom.children.length === 0) {
                 midDom.setAttribute('style', `display: none; height: 0px;`);
             } else {
-                midDom.setAttribute('style', `display: block; height: 50px;`);
+                midDom.setAttribute('style', `display: inline-flex; height: 50px;`);
                 subNumber += 50;
             }
             tableDom.setAttribute('style', `height: calc(100% - ${50 + subNumber}px )`)
@@ -202,14 +202,35 @@ export default {
                     .el-form{
                         text-align: left;
                         /deep/.el-form-item{
-                            height: 40px;
-                            line-height: 40px;
+                            height: 32px;
+                            // line-height: 32px;
+                            display: inline-flex;
+                            align-items: center;
                             .el-form-item__label,.el-form-item__content{
                                 height: 100%;
-                                .el-input{
+                                display: inline-flex;
+                                align-items: center;
+                                line-height: 1;
+                                .el-input,.el-input__inner{
                                     height: 100%;
+                                    line-height: 1;
+                                    display: inline-flex;
+                                    align-items: center;
                                     input{
                                         height: 100%;
+                                    }
+                                    span{
+                                        height: 100%;
+                                        line-height: 1;
+                                        display: inline-flex;
+                                        align-items: center;
+                                        .el-input__icon{
+                                            line-height: 1;
+                                        }
+                                    }
+                                    i{
+                                        display: inline-flex;
+                                        align-items: center;
                                     }
                                 }
                             }
@@ -221,6 +242,16 @@ export default {
                     height: 50px;
                     display: inline-block;
                     line-height: 50px;
+                    display: inline-flex;
+                    align-items: center;
+                    justify-content: flex-end;
+                    box-sizing: border-box;
+                    padding-right: 8px;
+                    .el-button{
+                        padding: 7px 15px;
+                        font-size: 12px;
+                        border-radius: 3px;
+                    }
                 }
             }
         }
@@ -228,9 +259,16 @@ export default {
         .base_table_mid_btn{
             width: 100%;
             height: 50px;
-            line-height: 50px;
+            // line-height: 50px;
             box-sizing: border-box;
             padding: 0 8px;
+            display: inline-flex;
+            align-items: center;
+            .el-button{
+                padding: 7px 15px;
+                font-size: 12px;
+                border-radius: 3px;
+            }
         }
     
         .base_table_content{
