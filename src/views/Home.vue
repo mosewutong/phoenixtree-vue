@@ -16,7 +16,19 @@
             <template v-slot:slot-form>
               <el-form :inline="true" :model="formInline">
                 <el-form-item label="审批人">
-                  <el-input v-model="formInline.user" placeholder="审批人" size="mini"></el-input>
+                  <!-- <el-input v-model="formInline.user" placeholder="审批人" size="mini"></el-input> -->
+                  <!-- <el-radio v-model="formInline.user" label="1">备选项</el-radio> -->
+                  <el-checkbox v-model="formInline.user">备选项</el-checkbox>
+                </el-form-item>
+                <el-form-item label="审批人">
+                  <el-select v-model="formInline.user" placeholder="请选择">
+                    <el-option
+                      v-for="item in options"
+                      :key="item.value"
+                      :label="item.label"
+                      :value="item.value">
+                    </el-option>
+                  </el-select>
                 </el-form-item>
                 <el-form-item label="审批人">
                   <el-input v-model="formInline.user" placeholder="审批人" size="small"></el-input>
@@ -73,7 +85,23 @@ export default {
           name: '修改',
           command: 'change',
         }
-      ]
+      ],
+      options: [{
+          value: '选项1',
+          label: '黄金糕'
+        }, {
+          value: '选项2',
+          label: '双皮奶'
+        }, {
+          value: '选项3',
+          label: '蚵仔煎'
+        }, {
+          value: '选项4',
+          label: '龙须面'
+        }, {
+          value: '选项5',
+          label: '北京烤鸭'
+        }],
     }
   },
   mounted(){

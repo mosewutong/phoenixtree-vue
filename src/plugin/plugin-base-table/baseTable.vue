@@ -233,6 +233,9 @@ export default {
                                         align-items: center;
                                     }
                                 }
+                                .el-select{
+                                    height: 100%;
+                                }
                             }
                         }
                     }
@@ -275,7 +278,7 @@ export default {
             width: 100%;
             height: calc(100% - 200px);
             box-sizing: border-box;
-            padding-top: 10px;
+            // padding-top: 10px;
         }
     
         .base_table_footer{
