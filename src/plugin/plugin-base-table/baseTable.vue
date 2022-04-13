@@ -155,6 +155,8 @@ export default {
         display: flex;
         box-sizing: border-box;
         border-bottom: 1px solid #eaeaea;
+        box-sizing: border-box;
+        padding: 0 8px;
         .base_table_header_title{
             width: 50%;
             height: 100%;
@@ -174,12 +176,12 @@ export default {
         width: 100%;
         height: calc( 100% - 50px);
         box-sizing: border-box;
-        padding: 16px 16px 0 16px;
+        padding-top: 8px;
         .base_table_top_btn{
             width: 100%;
             height: 50px;
             position: relative;
-            z-index: 1;
+            z-index: 2;
             overflow: hidden;
             .base_table_top_btn_box{
                 width: 100%;
@@ -203,7 +205,6 @@ export default {
                         text-align: left;
                         /deep/.el-form-item{
                             height: 32px;
-                            // line-height: 32px;
                             display: inline-flex;
                             align-items: center;
                             .el-form-item__label,.el-form-item__content{
@@ -262,7 +263,6 @@ export default {
         .base_table_mid_btn{
             width: 100%;
             height: 50px;
-            // line-height: 50px;
             box-sizing: border-box;
             padding: 0 8px;
             display: inline-flex;
@@ -278,7 +278,7 @@ export default {
             width: 100%;
             height: calc(100% - 200px);
             box-sizing: border-box;
-            // padding-top: 10px;
+            padding: 0 8px;
         }
     
         .base_table_footer{
