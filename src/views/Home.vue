@@ -1,6 +1,10 @@
 <template>
   <div class="home">
-    <phoenixtree-header :dropdowmArr="dropdowmArr" :bcColor="'linear-gradient(194deg, #3d7ffc 0%, #0450ff 100%);'" @emitChange="commandChange">
+    <phoenixtree-header
+      :dropdowmArr="dropdowmArr"
+      :bcColor="'linear-gradient(194deg, #3d7ffc 0%, #0450ff 100%);'"
+      @emitChange="commandChange"
+    >
       <template v-slot:header-title>
         <img src="../assets/mo.png" alt="">
         cesh
@@ -9,12 +13,31 @@
       <!-- <template v-slot:header-btn-pic>{{userPic}}</template> -->
       <!-- <template v-slot:header-btn-name>{{userName}}</template> -->
     </phoenixtree-header>
+
     <div class="homeContent">
-      <phoenixtree-layout :noPadding='false' :noContentPadding="false" :minWidth="'1000px'">
+      <phoenixtree-layout
+        :noPadding='false'
+        :noContentPadding="false"
+        :minWidth="'1000px'"
+      >
         <template v-slot:Frame-content>
-          <phoenixtree-base-table :pageTotal="200" :pageSize="20" :currentPage="4" @currentChange="currentChange">
+          <phoenixtree-base-table
+            :pageTotal="200"
+            :pageSize="20"
+            :currentPage="4"
+            @currentChange="currentChange"
+          >
+            <template v-slot:slot-title>标题文字区</template>
+
+            <template v-slot:slot-title-btn>
+              <el-button>标题按钮区</el-button>
+            </template>
+
             <template v-slot:slot-form>
-              <el-form :inline="true" :model="formInline">
+              <el-form
+                :inline="true"
+                :model="formInline"
+              >
                 <el-form-item label="审批人">
                   <!-- <el-input v-model="formInline.user" placeholder="审批人" size="mini"></el-input> -->
                   <!-- <el-radio v-model="formInline.user" label="1">备选项</el-radio> -->

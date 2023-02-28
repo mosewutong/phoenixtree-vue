@@ -75,14 +75,14 @@ export default {
 </script>
 
 <style lang="less" scoped>
-.plugin_header{
+.plugin_header {
   width: 100%;
   height: 50px;
   display: flex;
   align-items: center;
   box-sizing: border-box;
   padding: 0 40px;
-  .plugin_header_left{
+  .plugin_header_left {
     width: 50%;
     height: 100%;
     display: flex;
@@ -91,28 +91,28 @@ export default {
     font-size: 14px;
     font-weight: 700;
     color: #000;
-    img{
+    img {
       width: 25px;
       height: 25px;
       margin-right: 10px;
     }
   }
-  .plugin_header_right{
+  .plugin_header_right {
     width: 50%;
     height: 100%;
-    .leftListUser{
+    .leftListUser {
       height: 100%;
       display: flex;
       justify-content: flex-end;
       align-items: center;
       overflow: hidden;
-      .leftListUserPic{
+      .leftListUserPic {
         display: inline-flex;
         align-items: center;
         height: 100%;
         overflow: hidden;
         cursor: pointer;
-        .userPic{
+        .userPic {
           width: 25px;
           height: 25px;
           border-radius: 50%;
@@ -125,9 +125,9 @@ export default {
           background: #409eff;
           color: #fff;
         }
-        .leftListUserTxt{
+        .leftListUserTxt {
           text-align: center;
-          i{
+          i {
             margin-left: 10px;
             font-size: 14px;
           }
